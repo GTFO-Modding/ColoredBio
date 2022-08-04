@@ -7,11 +7,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static BepInEx.BepInDependency;
 
 namespace ColoredBio
 {
     [BepInPlugin("ColoredBio", "ColoredBio", "1.0.0")]
-    [BepInIncompatibility("GTFO.EECustomization")]
+    [BepInDependency("GTFO.EECustomization", DependencyFlags.SoftDependency)]
     internal class EntryPoint : BasePlugin
     {
         public override void Load()

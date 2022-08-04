@@ -38,5 +38,6 @@
 	<!-- Other Dependencies -->
 	<ItemGroup>
 		<Reference Include="$(PluginsFolder)/GTFO-API.dll" Private="false" />
+		<Reference Include="$(PluginsFolder)/ExtraEnemyCustomization.dll" Private="false" />
 	</ItemGroup>
 </Project>

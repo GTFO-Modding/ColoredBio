@@ -13,8 +13,17 @@ namespace ColoredBio
     [HarmonyPatch(typeof(EnemyPrefabManager), nameof(EnemyPrefabManager.BuildEnemyPrefab))]
     internal static class Inject_EnemyPrefab_Build
     {
-        private static void Postfix(GameObject __result)
+        private static void Postfix(GameObject __result, EnemyDataBlock data)
         {
+            if (EECUtil.Enabled)
+            {
+                if (EECUtil.HasScannerCustom(data.persistentID))
+                {
+                    Logger.Debug("Skipping Prefab with ScannerCustom in EEC set!");
+                    return;
+                }
+            }
+
             var agent = __result.GetComponent<EnemyAgent>();
             var handler = __result.AddComponent<BioColorHandler>();
             handler.Owner.Set(agent);

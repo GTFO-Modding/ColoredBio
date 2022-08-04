@@ -27,6 +27,7 @@
 	<ItemGroup>
 		<Compile Include="BioColorHandler.cs" />
 		<Compile Include="BioColorInfo.cs" />
+		<Compile Include="EECUtil.cs" />
 		<Compile Include="EntryPoint.cs" />
 		<Compile Include="Inject_EnemyPrefab_Build.cs" />
 		<Compile Include="Logger.cs" />
